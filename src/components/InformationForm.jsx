@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Button, TextField } from '@material-ui/core'
 
 function InformationForm({onSend}) {
+    
     const [checkin, setCheckin] = useState("");
     const [checkout, setCheckout] = useState("");
+    
     return (
         <form onSubmit={event => {
             event.preventDefault();

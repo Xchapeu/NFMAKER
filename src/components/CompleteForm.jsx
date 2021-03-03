@@ -6,6 +6,7 @@ import ClipboardJS from 'clipboard';
 
 
 function CompleteForm({ onSend }) {
+
     const [actualStep, setActualStep] = useState(0);
     const [dataCollected, setDataCollected] = useState({});
     const forms = [
@@ -75,7 +76,7 @@ function CompleteForm({ onSend }) {
                 <br></br>
                 <br></br>
                 <h4>VALOR APROXIMADO DOS TRIBUTOS (18,45%) R${tax} - FONTE IBPT</h4>
-                <Button 
+                <Button
                     data-clipboard-target="#description"
                     data-clipboard-demo
                     className="btn"
