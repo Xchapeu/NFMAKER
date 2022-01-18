@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import InformationForm from './InformationForm';
 import ValuePaid from './ValuePaid';
 import ClipboardJS from 'clipboard';
-
+import MyButton from './MyButton';
 
 function CompleteForm({ onSend }) {
 
@@ -28,6 +28,10 @@ function CompleteForm({ onSend }) {
 
     function next() {
         setActualStep(actualStep + 1);
+    }
+
+    function initialStep() {
+        setActualStep(0);
     }
 
     var clipboard = new ClipboardJS('.btn');
@@ -80,12 +84,22 @@ function CompleteForm({ onSend }) {
                     data-clipboard-target="#description"
                     data-clipboard-demo
                     className="btn"
+                    id="btnCopy"
                     variant="contained"
                     color="primary"
+                    spacing="20px"
                     fullWidth
                 >
                     COPIAR DESCRIÇÃO
                 </Button>
+                <MyButton
+                    className='btn'
+                    variant="contained"
+                    fullWidth
+                    onClick={initialStep}
+                >
+                    NOVA DESCRIÇÃO
+                </MyButton>
             </Container>
         );
     }
