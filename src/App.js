@@ -5,8 +5,9 @@ import CompleteForm from './components/CompleteForm';
 function App() {
   return (
     <Container maxWidth="sm" component="article">
-      <Typography variant="h3" component="h2" align="center">_____________________</Typography>
+      <Typography variant="h3" component="h2" align="center"><hr /></Typography>
       <Typography variant="h3" component="h1" align="center">NF Premium Flats</Typography>
+      <Typography variant="h3" component="h2" align="center"><hr /></Typography>
       <CompleteForm onSend={onSendForm} />
     </Container>
   );

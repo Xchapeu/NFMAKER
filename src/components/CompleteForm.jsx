@@ -70,36 +70,48 @@ function CompleteForm({ onSend }) {
             let value2 = splitString(value1, dot);
 
             let valorCalculado = (parseFloat(value2)) * 0.001845;
-            return parseFloat(valorCalculado.toFixed(2));
+            return parseFloat(valorCalculado);
         }
 
         return (
             <Container id="description">
                 <h4>HOSPEDAGEM NO PERÍODO DE {dataCheckin} À {dataCheckout}</h4>
-                <br></br>
-                <br></br>
-                <br></br>
-                <h4>VALOR APROXIMADO DOS TRIBUTOS (18,45%) R${tax} - FONTE IBPT</h4>
-                <Button
-                    data-clipboard-target="#description"
-                    data-clipboard-demo
-                    className="btn"
-                    id="btnCopy"
-                    variant="contained"
-                    color="primary"
-                    spacing="20px"
-                    fullWidth
+                <br />
+                <br />
+                <br />
+                <h4>VALOR APROXIMADO DOS TRIBUTOS (18,45%) R${tax.toFixed(2)} - FONTE IBPT</h4>
+                <Container
+                    align="center"
+                    style={{ 
+                        "display": "flex", 
+                        "justify-content": "space-between", 
+                        "align-items": "stretch",
+                        "margin-top": "50px",
+                        "padding": "0"
+                    }}
                 >
-                    COPIAR DESCRIÇÃO
-                </Button>
-                <MyButton
-                    className='btn'
-                    variant="contained"
-                    fullWidth
-                    onClick={initialStep}
-                >
-                    NOVA DESCRIÇÃO
-                </MyButton>
+                    <Button
+                        data-clipboard-target="#description"
+                        data-clipboard-demo
+                        className="btn"
+                        id="btnCopy"
+                        variant="contained"
+                        color="primary"
+                        spacing="20px"
+                        align="center"
+
+                    >
+                        COPIAR DESCRIÇÃO
+                    </Button>
+                    <MyButton
+                        className='btn'
+                        variant="contained"
+                        onClick={initialStep}
+                        align="center"
+                    >
+                        NOVA DESCRIÇÃO
+                    </MyButton>
+                </Container>
             </Container>
         );
     }
